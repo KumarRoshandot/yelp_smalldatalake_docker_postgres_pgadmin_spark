@@ -63,9 +63,12 @@
 2. Postgres
    1. There is a folder init_db_data which is mapped to volume of postgres container 'docker-entrypoint-initdb.d'
    2. Inside postgres container will be executed init.sh ( Shell script ) which has all the DDLs.
+   3. There are 2 env files which needs to be looked at
+      1. pgadminenv - These details will be used to authenticate pgadmin login later.( Provide your own Dummy EMAIL to set)
+      2. postgresenv - These details will be set to be used by apps to make connection with postgres DB.
 3. Upon Successful completion you should be able to see all containers running in docker desktop.
 4. pgadmin
-   1. It is mapped to port 8888, so we can navigate to [pgadmin](http://localhost:8888/) to login .
+   1. It is mapped to port 8888, so we can navigate to [pgadmin](http://localhost:8888/) to login .(Use Credential provided in pgadminenv file)
    ![pgadmin.png](pics/PGADMIN_SETUP.png)
    2. Sample Data check 
    ![pgadmin_sample.png](pics/SAMPLE_DATA.png)
