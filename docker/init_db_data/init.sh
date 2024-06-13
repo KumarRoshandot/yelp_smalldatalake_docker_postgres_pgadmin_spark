@@ -107,7 +107,7 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-E
 
 -----------------------------------------Create Tables Clean Layer--------------------------------------
 		-- 1. Business Dataset
-    CREATE TABLE rawlayer.yelp_academic_dataset_business(
+    CREATE TABLE cleanlayer.yelp_academic_dataset_business(
         address text,
         attributes JSONB,
         business_id text,
@@ -122,21 +122,18 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-E
         review_count bigint,
         stars DOUBLE PRECISION,
         state text,
-        week int,
-        month int,
-        year int,
         etl_load_date date
     );
 
     -- 2. Checkins Dataset
-    CREATE TABLE rawlayer.yelp_academic_dataset_checkin(
+    CREATE TABLE cleanlayer.yelp_academic_dataset_checkin(
             business_id text,
             date text,
             etl_load_date date
         );
 
     -- 3. Review Dataset
-    CREATE TABLE rawlayer.yelp_academic_dataset_review(
+    CREATE TABLE cleanlayer.yelp_academic_dataset_review(
             business_id text,
             cool bigint,
             date text,
@@ -146,11 +143,14 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-E
             text text,
             useful bigint,
             user_id text,
+            week int,
+            month int,
+            year int,
             etl_load_date date
         );
 
     -- 4. tip Dataset
-    CREATE TABLE rawlayer.yelp_academic_dataset_tip(
+    CREATE TABLE cleanlayer.yelp_academic_dataset_tip(
             text text,
             date text,
             compliment_count bigint,
@@ -160,7 +160,7 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-E
         );
 
     -- 5. User Dataset
-    CREATE TABLE rawlayer.yelp_academic_dataset_user(
+    CREATE TABLE cleanlayer.yelp_academic_dataset_user(
             user_id text,
             name CHARACTER VARYING(20),
             review_count bigint,
