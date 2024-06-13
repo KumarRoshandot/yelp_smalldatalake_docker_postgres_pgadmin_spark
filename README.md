@@ -66,9 +66,9 @@
 3. Upon Successful completion you should be able to see all containers running in docker desktop.
 4. pgadmin
    1. It is mapped to port 8888, so we can navigate to [pgadmin](http://localhost:8888/) to login .
-   ![pgadmin.png](./pics/PGADMIN_SETUP.PNG)
+   ![pgadmin.png](pics/PGADMIN_SETUP.png)
    2. Sample Data check 
-   ![pgadmin.png](./pics/SAMPLE_DATA.PNG)
+   ![pgadmin_sample.png](pics/SAMPLE_DATA.png)
 5. Spark
    1. Its been setup along with JDBC Jar in its dockerfile, Since JDBC Jar is needed to make connection to Postgres
    2. It is set to run 1 Master and 2 workers 
