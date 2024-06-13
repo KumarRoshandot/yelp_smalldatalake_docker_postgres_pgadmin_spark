@@ -1,0 +1,4 @@
+POSTGRES_PASSWORD=admin
+POSTGRES_USER=admin
+POSTGRES_HOST=postgres
+POSTGRES_DB=yelp_datalake
