@@ -3,6 +3,7 @@
 
 ---
 ## Requirements of datalake & Application
+- Yelp Dataset to be used  [Yelp Dataset](https://www.yelp.com/dataset/download)
 - It should consist of raw, cleaned and aggregated Yelp data.
 - All JSON files should be part of the raw data.
 - Consider all raw files for cleaning.
